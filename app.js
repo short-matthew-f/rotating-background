@@ -6,7 +6,7 @@ const setBackgroundElGradient = (percent, MIN_DEG = 150, MAX_DEG = 210) => {
 
 window.addEventListener('scroll', (event) => {
 	const percentScrolled = window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
-	setBackgroundElGradient(percentScrolled, 30, 330);
+	setBackgroundElGradient(percentScrolled, -30, 330);
 });
 
 setBackgroundElGradient(0, -30, 330);
