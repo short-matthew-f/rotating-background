@@ -4,9 +4,7 @@ const setBackgroundElGradient = (percent, MIN_DEG = 150, MAX_DEG = 210) => {
 	backgroundEl.style.backgroundImage = `linear-gradient(${degree}deg, #ff0, #ff0 50%, #0ff 50%)`;
 };
 
-window.addEventListener('scroll', (event) => {
-	const percentScrolled = window.pageYOffset / (document.body.scrollHeight - window.innerHeight);
-	setBackgroundElGradient(percentScrolled, -30, 330);
-});
+const percentScrolled = () => (window.pageYOffset / (document.body.scrollHeight - window.innerHeight));
 
-setBackgroundElGradient(0, -30, 330);
+setBackgroundElGradient(percentScrolled(), -30, 330);
+window.addEventListener('scroll', () => setBackgroundElGradient(percentScrolled(), -30, 330));
